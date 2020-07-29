@@ -1,7 +1,4 @@
- # Write your code here
 import random
-
-print("H A N G M A N")
 
 word_choices = ("python", "java", "kotlin", "javascript")
 word = random.choice(word_choices)
@@ -12,6 +9,7 @@ guess_set = set()
 
 lives = 8
 
+print("H A N G M A N")
 while lives > 0:
     print()
     print(''.join(guess_list))
@@ -30,20 +28,18 @@ while lives > 0:
                 if word[i] == guess_letter:
                     guess_list[i] = guess_letter
 
-            if ''.join(guess_list) == word:
-                print()
-                print(word)
-                print("You guessed the word!")
-                print("You survived!")
-                break
     else:
         lives -= 1
         print("No such letter in the word")
 
-
+    if ''.join(guess_list) == word:
+        print()
+        print(word)
+        print("You guessed the word!")
+        print("You survived!")
+        break
 
 if lives == 0:
-    print()
     print("You are hanged!")
 
 print("Thanks for playing!")
